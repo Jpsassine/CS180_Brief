@@ -28,9 +28,8 @@ export default function Home() {
           }
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.card}>
           <Link legacyBehavior href='/about'>
-          {/* <a>About Us</a> */}
           <a>
             <h2 className={inter.className}>
               About Us <span>-&gt;</span>
