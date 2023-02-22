@@ -42,6 +42,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
+  justify-content: space-between;
   width: var(--max-width);
   max-width: 100%;
 }
@@ -67,7 +68,7 @@
 .card p {
   margin: 0;
   opacity: 0.6;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   max-width: 30ch;
 }
@@ -104,51 +105,44 @@
   transform: translateZ(0);
 }
 
-.logo,
-.thirteen {
-  position: relative;
+/* adding team page stuff here */
+.wrapper {
+  margin-top: 60px;
+  text-align: center;
+}
+.wrapper h1 {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  color : lightblue
 }
 
-.thirteen {
+.ourTeam{
   display: flex;
+  width: auto;
   justify-content: center;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  padding: 25px 10px;
-  margin-left: 16px;
-  transform: translateZ(0);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0px 2px 8px -1px #0000001a;
 }
 
-.thirteen::before,
-.thirteen::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
+.member{
+  width: 250px;
+  margin: 5px;
 }
 
-/* Conic Gradient Animation */
-.thirteen::before {
-  animation: 6s rotate linear infinite;
-  width: 200%;
-  height: 200%;
-  background: var(--tile-border);
+.member h3 {
+  text-transform: uppercase;
 }
 
-/* Inner Square */
-.thirteen::after {
-  inset: 0;
-  padding: 1px;
-  border-radius: var(--border-radius);
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--tile-start-rgb), 1),
-    rgba(var(--tile-end-rgb), 1)
-  );
-  background-clip: content-box;
+/* Brief tool styles */
+.briefTool {
+  position: relative;
+  padding: 40px 200px 40px 200px;
+  text-align: center;
+  border: 200px solid #181823;
+}
+
+.interactionsText {
+  width: 50%;
+  margin: 60px auto 60px auto;
+  text-align: left;
 }
 
 /* Enable hover only on non-touch devices */
@@ -183,6 +177,7 @@
     grid-template-columns: 1fr;
     margin-bottom: 120px;
     max-width: 320px;
+    justify-content: space-between;
     text-align: center;
   }
 
@@ -254,6 +249,7 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
+    justify-content: space-between;
   }
 }
 
@@ -276,3 +272,4 @@
     transform: rotate(0deg);
   }
 }
+
