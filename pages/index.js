@@ -1,12 +1,24 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter, Linden_Hill } from '@next/font/google'
+import { initFirebase } from "../firebase/firebaseApp"
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth"
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  initFirebase();
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+
+  const signIn = async () => {
+    const result = await signInWithPopup(auth, provider);
+    console.log(result.user);
+  }
   return (
     <>
       <Head>
@@ -17,10 +29,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <Link legacyBehavior href = '/login'>
-            <a>
-              Log In
-            </a>
+          <Link legacyBehavior href = '/brieftool'>
+            <button onClick={signIn}>Login</button>
           </Link>
         </div>
 
