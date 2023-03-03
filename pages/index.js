@@ -16,9 +16,11 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            Get started by connecting Your Accounts
-          </p>
+        <Link legacyBehavior href = '/login'>
+            <a>
+              Log In
+            </a>
+          </Link>
         </div>
       
         <div className={styles.center}>
