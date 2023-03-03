@@ -28,10 +28,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-        <Link legacyBehavior href = '/login'>
-            <a>
-              Log In
-            </a>
+          <Link legacyBehavior href = '/brieftool'>
+            <button onClick={signIn}> Login </button>
           </Link>
         </div>
         <div className={styles.center}>
