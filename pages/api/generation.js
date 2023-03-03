@@ -52,14 +52,8 @@ export default async function (req, res) {
 //changes
 // TODO(JP): Parse message to standard format in function within this file
 function generatePrompt(inbound_msg) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `Suggest three names for an animal that is a superhero.
-
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${capitalizedAnimal}
-Names:`;
+  return `Summarize the content of this email into a couple sentances.
+  
+   Full email:${inbound_msg}
+   Summary:`;
 }
