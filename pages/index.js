@@ -46,8 +46,6 @@ export default function Home() {
             </a>
             </Link>
             </div>
-
-        
           <div className={styles.card}>
             <Link legacyBehavior href='/about'>
             <a>

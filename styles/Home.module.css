@@ -131,6 +131,19 @@
   text-transform: uppercase;
 }
 
+/* Brief tool styles */
+.briefTool {
+  position: relative;
+  padding: 40px 200px 40px 200px;
+  text-align: center;
+  border: 200px solid #181823;
+}
+
+.interactionsText {
+  width: 50%;
+  margin: 60px auto 60px auto;
+  text-align: left;
+}
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -259,3 +272,4 @@
     transform: rotate(0deg);
   }
 }
+

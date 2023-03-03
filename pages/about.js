@@ -1,5 +1,3 @@
-
-
 import Head from 'next/head'
 import Image from 'next/image'
 import { Josefin_Sans } from '@next/font/google'
