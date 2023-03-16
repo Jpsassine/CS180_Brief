@@ -52,8 +52,6 @@ export default async function (req, res) {
 //changes
 // TODO(JP): Parse message to standard format in function within this file
 function generatePrompt(inbound_msg) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
   return `Summarize the content of this email into a couple sentances.
   
    Full email:${inbound_msg}
