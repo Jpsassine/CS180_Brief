@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Gmail Inbox</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Welcome to Gmail Inbox</h1>
+      <div id="total">Total Messages:</div>
+      <input type="range" id="number" value="3" max="500" min="0" />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody id="result"></tbody>
+      </table>
+      <button id="logout">Logout</button>
+    </div>
+  </body>
+  <script type="module" src="profile.js"></script>
+</html>
