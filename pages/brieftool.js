@@ -26,40 +26,35 @@ const Login = ({ data }) => { // pass the data as a prop
     return <div>Loading...</div>
   }
   if (user) {
-    return (
-      <div>
-        <Head>
-          <title>My Page</title>
-        </Head>
-        <div>Welcome {user.displayName}
-          <Link legacyBehavior href='/'>
-            <button onClick={() => handleSubmit()}>Logout</button>
-          </Link>
-          <div className={inter.className}>
-            <div className={styles.briefTool}>
-              <h1> Your daily summary </h1>
-              {Object.entries(data).map(([key, value]) => ( // map over the data
-                <div className={styles.interactionsText} key={key}>
-                  <h3>{key}</h3>
-                  <ul>
-                    <li>{value}</li>
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
+    return <div>Welcome {user.displayName}
+    <Link legacyBehavior href = '/'>
+      <button onClick={() => handleSubmit()}>Logout</button>
+    </Link>
+    <div className={inter.className}>
+     <div className={styles.briefTool}>
+      <h1> Your daily summary </h1>
+      {Object.keys(data).map((key, index) => (
+        <div className={styles.interactionsText} key={index}>
+          <h3>{key}</h3>
+          <ul>
+            {data[key].map((value, index) => (
+              <li key={index}>{value}</li>
+            ))}
+          </ul>
         </div>
-      </div>
-    );
+      ))}
+     </div>
+    </div>
+    </div>
   }
   return (<h1></h1>)
 }
 
 export async function getServerSideProps() {
   const res = {
-    "John": "Hello World!",
-    "Jane": "Hello World 1!",
-    "Judy": "Hello World 2!"
+    "John": ["Hello World!", "Goodbye World!"],
+    "Jane": ["Hello World 1!"],
+    "Judy": ["Hello World 2!", "Goodbye World 2!", "Hello World 3!"]
   };
 
   return { props: { data: res } };
