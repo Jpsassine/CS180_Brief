@@ -35,7 +35,10 @@ const Login = ({ data }) => {
   const auth = getAuth();
   const router = useRouter();
   const provider = new GoogleAuthProvider();
-  //provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
+  provider.setCustomParameters({
+    client_id: "YOUR_CLIENT_ID", // This is your OAuth 2.0 Client ID
+  });
+  provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
 
   const signIn = async () => {
     const result = await signInWithPopup(auth, provider);

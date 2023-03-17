@@ -1,6 +1,15 @@
 function loadGmailApi() {
-  return gapi.load("client:auth2").then(function () {
-    return gapi.client.load("gmail", "v1");
+  return new Promise(function (resolve, reject) {
+    gapi.load("client", function () {
+      gapi.client.load("gmail", "v1").then(
+        function () {
+          resolve();
+        },
+        function (error) {
+          reject(error);
+        }
+      );
+    });
   });
 }
 
