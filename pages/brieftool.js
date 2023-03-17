@@ -6,6 +6,9 @@ import Head from 'next/head'
 import { Josefin_Sans } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from "next/link";
+import React, { Component } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const inter = Josefin_Sans({ subsets: ['latin'] })
 
@@ -30,9 +33,11 @@ const Login = ({ data }) => { // pass the data as a prop
     <Link legacyBehavior href = '/'>
       <button onClick={() => handleSubmit()}>Logout</button>
     </Link>
+
     <div className={inter.className}>
      <div className={styles.briefTool}>
       <h1> Your daily summary </h1>
+      <Carousel>
       {Object.keys(data).map((key, index) => (
         <div className={styles.interactionsText} key={index}>
           <h3>{key}</h3>
@@ -43,6 +48,7 @@ const Login = ({ data }) => { // pass the data as a prop
           </ul>
         </div>
       ))}
+      </Carousel>
      </div>
     </div>
     </div>
