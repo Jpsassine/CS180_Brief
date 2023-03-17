@@ -42,8 +42,8 @@ const Login = ({ data }) => { // pass the data as a prop
       <Carousel>
       {Object.keys(data).map((key, index) => (
         <div style={local_styles.interactionsText} key={index}>
-          <h3>{key}</h3>
-          <ul>
+          <h3 style={{color: '#ADD8E6', fontSize: '24px'}}>Message(s) From : <span style={{ color:'#66CCFF' }}>{key}</span></h3>
+          <ul style={{fontSize: '20px'}}>
             {data[key].map((value, index) => (
               <li key={index}>{value}</li>
             ))}
@@ -69,7 +69,7 @@ const Login = ({ data }) => { // pass the data as a prop
 
 export async function getServerSideProps() {
   const res = {
-    "John": ["Hello World!", "Goodbye World!"],
+    "John": ["Hello World!", "Goodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbye  oodbyeoodbyeoodbyeoodbye  World!"],
     "Jane": ["Hello World 1!"],
     "Judy": ["Hello World 2!", "Goodbye World 2!", "Hello World 3!"]
   };
@@ -91,6 +91,7 @@ const local_styles = {
 
   interactionsText: {
     width: '50%',
+    lineHeight: '3rem',
     margin: '60px auto 60px auto',
     textAlign: 'left',
   },
