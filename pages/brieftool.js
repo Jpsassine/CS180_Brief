@@ -16,6 +16,9 @@ import { Carousel } from "react-responsive-carousel";
 import Brief from "../images/Brief.jpg";
 import Image from "next/image";
 import { readInboxEmails } from "./api/gmail";
+// call from parser
+// call from formatter
+
 
 const inter = Josefin_Sans({ subsets: ["latin"] });
 
@@ -30,6 +33,10 @@ const Login = ({ data }) => {
 
   const [token, setToken] = React.useState("");
   const [loginState, setLoginState] = React.useState("");
+
+  const ReadEmails(){
+    // return summary data.
+  }
 
   initFirebase();
   const auth = getAuth();
@@ -85,6 +92,7 @@ const Login = ({ data }) => {
       </div>
     );
   }
+  readInboxEmails
   readInboxEmails(token); //--------------------------------------------------- DOUBLE CHECK!
   if (loading) {
     return (
