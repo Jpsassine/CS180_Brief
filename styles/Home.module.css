@@ -18,6 +18,16 @@
   justify-content: center;
 }
 
+.aboutp {
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.car {
+  justify-content: center;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -94,6 +104,17 @@
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
 
+}
+
+.cardimg {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+
+.teamdesc {
+  position: absolute;
+  justify-items: left;
 }
 
 .card span {

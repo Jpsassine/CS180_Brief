@@ -19,8 +19,7 @@ export default function AboutUs() {
             About Brief
           </h1>
       </div>
-      <div className={styles.teamdesc}>
-        </div>
+      <div className={inter.className}>
         <Carousel className={styles.car}>
             <div>
             <h2>Motivation</h2>
@@ -43,6 +42,7 @@ export default function AboutUs() {
           first and foremost which will be done through the user making an account on our website and linking their email accounts they wish to have as communication feeds for Brief to monitor.             </p>
             </div>
         </Carousel>
+      </div>
     </>
   )
 }

@@ -13,16 +13,16 @@ import { useEffect } from "react";
 export default function AboutUs() {
   return (
     <>
+     <div className={styles.teamdesc}>
+        <Link legacyBehavior href = '/'>
+            <button className={styles.bbutton}> Back </button>
+          </Link>
+          </div>
     <Head>
         <title>Meet Our Team </title>
       </Head>
       <main className={styles.main}>
         < div className={styles.wrapper}>
-        <div className={styles.teamdesc}>
-        <Link legacyBehavior href = '/'>
-            <button className={styles.bbutton}> Back </button>
-          </Link>
-          </div>
             <h1>Our Team</h1>
             <div className={styles.ourTeam}>
                 <div class="card" className={styles.card}>
