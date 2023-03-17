@@ -47,6 +47,21 @@
   max-width: 100%;
 }
 
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(51, 49, 49);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  margin: 5px;
+  font-family: var(--font-mono);
+}
+
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
@@ -113,13 +128,14 @@
 .wrapper h1 {
   font-family: var(--font-mono);
   font-size: 48px;
-  color : lightblue
+  color : white
 }
 
 .ourTeam{
   display: flex;
   width: auto;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .member{
@@ -129,6 +145,20 @@
 
 .member h3 {
   text-transform: uppercase;
+}
+
+.card {
+  width: 15rem;
+}
+
+.cardimg {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+
+.back {
+  justify-content: left;
 }
 
 /* Brief tool styles */
@@ -161,6 +191,11 @@
     width: 100%;
     z-index: 2;
     font-family: var(--font-mono);
+  }
+
+  .teamdesc {
+    position: absolute;
+    justify-items: left;
   }
   
   .description a {

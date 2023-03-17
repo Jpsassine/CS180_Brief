@@ -29,7 +29,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <Link legacyBehavior href = '/brieftool'>
-            <button onClick={signIn}> Login </button>
+            <button className={styles.button}onClick={signIn}> Login </button>
           </Link>
         </div>
         <div className={styles.center}>
@@ -47,7 +47,7 @@ export default function Home() {
             <Link legacyBehavior href='/ourteam'>
             <a>
               <h2 className={inter.className}>
-                Our Team 
+                Our Team
               </h2>
               <p className={styles.description}>
                 Meet the Squad!

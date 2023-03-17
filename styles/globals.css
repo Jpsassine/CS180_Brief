@@ -81,6 +81,7 @@
   
   html,
   body {
+    background-color: black;
     max-width: 100vw;
     overflow-x: hidden;
   }
@@ -120,6 +121,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:hover {
+  color:white
 }
 
 .not-found {
