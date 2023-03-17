@@ -107,8 +107,7 @@ const Login = ({ data }) => {
       </div>
     );
   }
-  //ReadEmails();
-  //readInboxEmails(token); --------------------------------------------------- DOUBLE CHECK!
+
   if (loading || fetching != "done") {
     return (
       <div
