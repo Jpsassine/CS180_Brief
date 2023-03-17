@@ -31,9 +31,9 @@ const Login = ({ data }) => { // pass the data as a prop
     return <div>Loading...</div>
   }
   if (user) {
-    return <div>Welcome {user.displayName}
+    return <div className={inter.className} style={{ fontSize: '20px' }}>Welcome {user.displayName}
     <Link legacyBehavior href = '/'>
-      <button onClick={() => handleSubmit()}>Logout</button>
+      <button onClick={() => handleSubmit()} className={styles.button}>Logout</button>
     </Link>
 
     <div className={inter.className}>
@@ -41,14 +41,17 @@ const Login = ({ data }) => { // pass the data as a prop
       <h1> Your daily summary </h1>
       <Carousel>
       {Object.keys(data).map((key, index) => (
-        <div style={local_styles.interactionsText} key={index}>
-          <h3 style={{color: '#ADD8E6', fontSize: '24px'}}>Message(s) From : <span style={{ color:'#66CCFF' }}>{key}</span></h3>
-          <ul style={{fontSize: '20px'}}>
-            {data[key].map((value, index) => (
-              <li key={index}>{value}</li>
-            ))}
-          </ul>
-        </div>
+       <div style={local_styles.interactionsText} key={index}>
+        <h3 style={{color: '#ADD8E6', fontSize: '24px'}}>Message(s) From : <span style={{ color:'#66CCFF' }}>{key}</span></h3>
+        <ul style={{fontSize: '20px'}}>
+         {data[key].map((value, index) => (
+          <li key={index}>{value}</li>
+         ))}
+        </ul>
+        {data[key].some((value) => value.includes("meeting")) && (
+         <button className={styles.brieftoolButton} style={{marginTop: '20px'}}>Join</button>
+        )}
+       </div>
       ))}
       </Carousel>
      </div>
@@ -71,7 +74,7 @@ export async function getServerSideProps() {
   const res = {
     "John": ["Hello World!", "Goodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbye  oodbyeoodbyeoodbyeoodbye  World!"],
     "Jane": ["Hello World 1!"],
-    "Judy": ["Hello World 2!", "Goodbye World 2!", "Hello World 3!"]
+    "Judy": ["Hello World 2!", "Goodbye World meeting 2 bla bla bla bla bla hahahah!", "Hello World 3!"]
   };
 
   return { props: { data: res } };
@@ -79,6 +82,7 @@ export async function getServerSideProps() {
 
 export default Login;
 
+// 000E2B
 /* Brief tool styles */
 const local_styles = {
   briefBorder: {
@@ -86,7 +90,7 @@ const local_styles = {
     textAlign: 'center',
     padding: '40px 200px 40px 200px',
     border: '10px solid #66CCFF',
-    backgroundColor: '#595957',
+    backgroundColor: '#1A1A1A',
   },
 
   interactionsText: {

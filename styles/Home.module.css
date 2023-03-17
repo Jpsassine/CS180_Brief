@@ -105,6 +105,40 @@
   transform: translateZ(0);
 }
 
+.button {
+  background-color:black ;
+  border: 1px solid #1097da;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1c99d7;;
+}
+
+.brieftoolButton {
+  background-color:#1A1A1A;
+  border: 1px solid #1097da;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.brieftoolButton:hover {
+  background-color: #1c99d7;;
+}
+
 /* adding team page stuff here */
 .wrapper {
   margin-top: 60px;
