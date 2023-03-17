@@ -67,6 +67,18 @@ export default function Home() {
             </a>
             </Link>
           </div>
+          <div className={styles.card}>
+            <Link legacyBehavior href='/usagepage'>
+            <a>
+              <h2 className={inter.className}>
+                Usage Page 
+              </h2>
+              <p className={styles.description}>
+                Learn how to use Brief
+              </p>
+            </a>
+            </Link>
+          </div>
         </div>
 
       </main>
