@@ -1,0 +1,71 @@
+{
+  "Alice": [
+    {
+      "subject": "Reminder",
+      "body": "Don't forget to bring the report to the meeting"
+    },
+    {
+      "subject": "Reminder",
+      "body": "Don't forget to bring the report to the meeting"
+    },
+    {
+      "subject": "Question",
+      "body": "Can you help me with this issue?"
+    },
+    {
+      "subject": "Update",
+      "body": "The project deadline has been moved to next month"
+    }
+  ],
+  "Bob": [
+    {
+      "subject": "Meeting",
+      "body": "Let's schedule a meeting for next week"
+    },
+    {
+      "subject": "Update",
+      "body": "The project deadline has been moved to next month"
+    },
+    {
+      "subject": "Reminder",
+      "body": "Don't forget to bring the report to the meeting"
+    }
+  ],
+  "Charlie": [
+    {
+      "subject": "Question",
+      "body": "Can you help me with this issue?"
+    },
+    {
+      "subject": "Meeting",
+      "body": "Let's schedule a meeting for next week"
+    },
+    {
+      "subject": "Reminder",
+      "body": "Don't forget to bring the report to the meeting"
+    }
+  ]
+}
+
+
+
+
+{
+    "Alice": [
+      [ "Subject: Reminder\nBody: Don't forget to bring the report to the meeting", "" ],
+      [ "Subject: Reminder\nBody: Don't forget to bring the report to the meeting", "" ],
+      [ "Subject: Question\nBody: Can you help me with this issue?", "" ],
+      [ "Subject: Update\nBody: The project deadline has been moved to next month", "" ]
+    ],
+    "Bob": [
+      [ "Subject: Meeting\nBody: Let's schedule a meeting for next week", "" ],
+      [ "Subject: Update\nBody: The project deadline has been moved to next month", "" ],
+      [ "Subject: Reminder\nBody: Don't forget to bring the report to the meeting", "" ]
+    ],
+    "Charlie": [
+      [ "Subject: Question\nBody: Can you help me with this issue?", "" ],
+      [ "Subject: Meeting\nBody: Let's schedule a meeting for next week", "" ],
+      [ "Subject: Reminder\nBody: Don't forget to bring the report to the meeting", "" ]
+    ]
+  }
+  
