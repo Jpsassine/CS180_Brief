@@ -29,7 +29,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <Link legacyBehavior href = '/brieftool'>
-            <button className={styles.button}onClick={signIn}> Login </button>
+            <button onClick={signIn} className={styles.button}> Login </button>
           </Link>
         </div>
         <div className={styles.center}>
@@ -41,8 +41,7 @@ export default function Home() {
             priority
           />
         </div>
-        
-        <div className={styles.grid}>
+        <div className={styles.griddy}>
           <div className={styles.card}>
             <Link legacyBehavior href='/ourteam'>
             <a>
@@ -59,10 +58,22 @@ export default function Home() {
             <Link legacyBehavior href='/about'>
             <a>
               <h2 className={inter.className}>
-                About Us 
+                About Us
               </h2>
               <p className={styles.description}>
-                Learn more about our company and values.
+                Learn about our company.
+              </p>
+            </a>
+            </Link>
+          </div>
+          <div className={styles.card}>
+            <Link legacyBehavior href='/usagepage'>
+            <a>
+              <h2 className={inter.className}>
+                Usage Page
+              </h2>
+              <p className={styles.description}>
+                Learn how to use Brief.
               </p>
             </a>
             </Link>
@@ -73,5 +84,3 @@ export default function Home() {
     </>
   )
 }
-
-
