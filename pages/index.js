@@ -41,7 +41,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className={styles.grid} style={{display: 'flex'}}>
+        <div className={styles.griddy}>
           <div className={styles.card}>
             <Link legacyBehavior href='/ourteam'>
             <a>
@@ -61,7 +61,7 @@ export default function Home() {
                 About Us
               </h2>
               <p className={styles.description}>
-                Learn more about our company and values.
+                Learn about our company.
               </p>
             </a>
             </Link>
