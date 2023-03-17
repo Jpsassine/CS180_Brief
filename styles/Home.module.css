@@ -1,3 +1,10 @@
+.griddy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -53,7 +60,6 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
-  width: 500px;
 
 }
 
@@ -209,7 +215,7 @@
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
-    max-width: 700px;
+    max-width: 320px;
     justify-content: space-between;
     text-align: center;
 
@@ -361,7 +367,7 @@
     .grid {
       grid-template-columns: 1fr;
       margin-bottom: 120px;
-      max-width: 320px;
+      max-width: 700px;
       text-align: center;
     }
 
