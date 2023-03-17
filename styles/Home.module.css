@@ -53,6 +53,8 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  width: 500px;
+
 }
 
 .card span {
@@ -173,9 +175,10 @@
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
-    max-width: 320px;
+    max-width: 700px;
     justify-content: space-between;
     text-align: center;
+
   }
 
   .card {
@@ -184,6 +187,7 @@
     background: rgba(var(--card-rgb), 0);
     border: 1px solid rgba(var(--card-border-rgb), 0);
     transition: background 200ms, border 200ms;
+
   }
 
   .card span {
