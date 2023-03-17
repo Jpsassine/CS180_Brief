@@ -26,6 +26,7 @@ const Login = ({ data }) => { // pass the data as a prop
   const router = useRouter();
   const provider = new GoogleAuthProvider();
   const [user, loading] = useAuthState(auth);
+  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
   if (loading) {
     return <div>Loading...</div>
@@ -38,7 +39,7 @@ const Login = ({ data }) => { // pass the data as a prop
 
     <div className={inter.className}>
      <div style={local_styles.briefBorder}>
-      <h1> Your daily summary </h1>
+      <h1> {today} Brief </h1>
       <Carousel>
       {Object.keys(data).map((key, index) => (
        <div style={local_styles.interactionsText} key={index}>
