@@ -10,7 +10,7 @@ import Head from "next/head";
 import { Josefin_Sans } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Brief from "../images/Brief.jpg";
@@ -75,6 +75,16 @@ const Login = ({ data }) => {
     month: "long",
     day: "numeric",
   });
+
+  const [expandedMessageIndex, setExpandedMessageIndex] = useState(null);
+
+  const handleViewDetails = (index) => {
+    if (index === expandedMessageIndex) {
+      setExpandedMessageIndex(null);
+    } else {
+      setExpandedMessageIndex(index);
+    }
+  };
 
   if (!loginState) {
     return (
@@ -152,6 +162,17 @@ const Login = ({ data }) => {
                       <li key={index}>{value}</li>
                     ))}
                   </ul>
+                  <button className={styles.brieftoolButton}
+            style={{ marginTop: "20px" }}
+            onClick={() => handleViewDetails(index)}>View Full Message
+            </button>
+            {expandedMessageIndex === index && (
+                <ul>
+                {data[key].map((value, index) => (
+                <li key={index}>{JSON.stringify(value)}</li>
+                ))}
+                </ul>
+            )}
                   {data[key].some((value) =>
                     value.includes("meeting")
                   ) && (
