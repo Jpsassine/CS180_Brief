@@ -44,7 +44,7 @@ export function readInboxEmails(token) {
                   // Extract the message data
                   var message = messageResponse.result;
                   var headers = message.payload.headers;
-                  var from, subject, date;
+                  var from, subject, date, body;
 
                   // Get the relevant headers
                   for (var j = 0; j < headers.length; j++) {
@@ -54,15 +54,49 @@ export function readInboxEmails(token) {
                     } else if (header.name === "Subject") {
                       subject = header.value;
                     } else if (header.name === "Date") {
-                      date = header.value;
+                      var date = new Date(header.value);
+                      var now = new Date();
+                      var hoursSince =
+                        (now - date) / (1000 * 60 * 60); // Calculate the number of hours since the message was sent
+                      if (hoursSince <= 24) {
+                        // Check if the message was sent within the last 24 hours
+                        var formattedDate = date.toISOString();
+                      }
+                    } else if (header.name === "Body") {
+                      var body = header.value;
+                    }
+
+                    if (from && subject && formattedDate && body) {
+                      const messageDict = {
+                        from,
+                        subject,
+                        date: formattedDate,
+                        body,
+                      };
+                      messagesArray.push(messageDict);
+                      from = null;
+                      subject = null;
+                      formattedDate = null;
+                      body = null;
                     }
                   }
-
-                  // Display the email data
-                  console.log("From:", from);
-                  console.log("Subject:", subject);
-                  console.log("Date:", date);
-                  console.log("---");
+                  // Convert the object to JSON and log it to the console
+                  const messagesJSON = JSON.stringify(messagesArray);
+                  console.log(messagesJSON);
+                  fs.writeFile(
+                    "raw_emails.json",
+                    messagesJSON,
+                    (error) => {
+                      if (error) {
+                        console.error(
+                          "Error writing message to file: ",
+                          error
+                        );
+                      } else {
+                        console.log("Message written to file");
+                      }
+                    }
+                  );
                 });
             }
           } else {

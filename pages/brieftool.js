@@ -36,7 +36,8 @@ const Login = ({ data }) => {
   const router = useRouter();
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({
-    client_id: "YOUR_CLIENT_ID", // This is your OAuth 2.0 Client ID
+    client_id:
+      "915039922825-lkcgt4khka0ub8bl8pmfqrdvkrc6gkv7.apps.googleusercontent.com", // This is your OAuth 2.0 Client ID
   });
   provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
 
@@ -84,7 +85,7 @@ const Login = ({ data }) => {
       </div>
     );
   }
-  readInboxEmails(token);
+  readInboxEmails(token); //--------------------------------------------------- DOUBLE CHECK!
   if (loading) {
     return (
       <div
