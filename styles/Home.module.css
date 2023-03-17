@@ -7,6 +7,10 @@
   min-height: 100vh;
 }
 
+.aboutmain {
+  justify-content: center;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -42,9 +46,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
-  justify-content: space-between;
   width: var(--max-width);
-  max-width: 100%;
+  margin: none;
 }
 
 .button {
@@ -175,6 +178,21 @@
   text-align: left;
 }
 
+.teamdesc {
+  position: absolute;
+  justify-items: left;
+}
+
+.aboutp {
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.car {
+  justify-content: center;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -191,11 +209,6 @@
     width: 100%;
     z-index: 2;
     font-family: var(--font-mono);
-  }
-
-  .teamdesc {
-    position: absolute;
-    justify-items: left;
   }
   
   .description a {
