@@ -1,3 +1,10 @@
+.griddy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -5,6 +12,20 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+}
+
+.aboutmain {
+  justify-content: center;
+}
+
+.aboutp {
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.car {
+  justify-content: center;
 }
 
 .description {
@@ -42,9 +63,38 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
-  justify-content: space-between;
   width: var(--max-width);
-  max-width: 100%;
+  margin: none;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(51, 49, 49);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  margin: 5px;
+  font-family: var(--font-mono);
+}
+
+.bbutton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(51, 49, 49);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  margin: 5px;
+  font-family: var(--font-mono);
 }
 
 .card {
@@ -53,6 +103,18 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+
+}
+
+.cardimg {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+
+.teamdesc {
+  position: absolute;
+  justify-items: left;
 }
 
 .card span {
@@ -105,6 +167,40 @@
   transform: translateZ(0);
 }
 
+.button {
+  background-color:black ;
+  border: 1px solid #1097da;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1c99d7;;
+}
+
+.brieftoolButton {
+  background-color:#1A1A1A;
+  border: 1px solid #1097da;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.brieftoolButton:hover {
+  background-color: #1c99d7;;
+}
+
 /* adding team page stuff here */
 .wrapper {
   margin-top: 60px;
@@ -113,13 +209,14 @@
 .wrapper h1 {
   font-family: var(--font-mono);
   font-size: 48px;
-  color : lightblue
+  color : white
 }
 
 .ourTeam{
   display: flex;
   width: auto;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .member{
@@ -176,6 +273,7 @@
     max-width: 320px;
     justify-content: space-between;
     text-align: center;
+
   }
 
   .card {
@@ -184,6 +282,7 @@
     background: rgba(var(--card-rgb), 0);
     border: 1px solid rgba(var(--card-border-rgb), 0);
     transition: background 200ms, border 200ms;
+
   }
 
   .card span {
@@ -323,7 +422,7 @@
     .grid {
       grid-template-columns: 1fr;
       margin-bottom: 120px;
-      max-width: 320px;
+      max-width: 700px;
       text-align: center;
     }
 
