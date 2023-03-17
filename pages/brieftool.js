@@ -9,6 +9,8 @@ import Link from "next/link";
 import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import Brief from '../images/Brief.jpg'
+import Image from 'next/image'
 
 const inter = Josefin_Sans({ subsets: ['latin'] })
 
@@ -35,13 +37,13 @@ const Login = ({ data }) => { // pass the data as a prop
     </Link>
 
     <div className={inter.className}>
-     <div className={styles.briefTool}>
+     <div style={local_styles.briefBorder}>
       <h1> Your daily summary </h1>
       <Carousel>
       {Object.keys(data).map((key, index) => (
-        <div className={styles.interactionsText} key={index}>
-          <h3>{key}</h3>
-          <ul>
+        <div style={local_styles.interactionsText} key={index}>
+          <h3 style={{color: '#ADD8E6', fontSize: '24px'}}>Message(s) From : <span style={{ color:'#66CCFF' }}>{key}</span></h3>
+          <ul style={{fontSize: '20px'}}>
             {data[key].map((value, index) => (
               <li key={index}>{value}</li>
             ))}
@@ -49,6 +51,15 @@ const Login = ({ data }) => { // pass the data as a prop
         </div>
       ))}
       </Carousel>
+     </div>
+     <div className={styles.center}>
+       <Image
+         src= {Brief}
+         alt="Brief Logo"
+         width={375}
+         height={265}
+         priority
+       />
      </div>
     </div>
     </div>
@@ -58,7 +69,7 @@ const Login = ({ data }) => { // pass the data as a prop
 
 export async function getServerSideProps() {
   const res = {
-    "John": ["Hello World!", "Goodbye World!"],
+    "John": ["Hello World!", "Goodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbye  oodbyeoodbyeoodbyeoodbye  World!"],
     "Jane": ["Hello World 1!"],
     "Judy": ["Hello World 2!", "Goodbye World 2!", "Hello World 3!"]
   };
@@ -67,3 +78,21 @@ export async function getServerSideProps() {
 }
 
 export default Login;
+
+/* Brief tool styles */
+const local_styles = {
+  briefBorder: {
+    position: 'relative',
+    textAlign: 'center',
+    padding: '40px 200px 40px 200px',
+    border: '10px solid #66CCFF',
+    backgroundColor: '#595957',
+  },
+
+  interactionsText: {
+    width: '50%',
+    lineHeight: '3rem',
+    margin: '60px auto 60px auto',
+    textAlign: 'left',
+  },
+};

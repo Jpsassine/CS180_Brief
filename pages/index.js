@@ -74,7 +74,11 @@ export default function Home() {
                 Usage Page 
               </h2>
               <p className={styles.description}>
+<<<<<<< HEAD
                 Learn how to use Brief.
+=======
+                Learn how to use Brief
+>>>>>>> origin/master
               </p>
             </a>
             </Link>
