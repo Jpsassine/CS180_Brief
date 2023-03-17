@@ -42,7 +42,7 @@ export default function Home() {
           />
         </div>
         
-        <div className={styles.grid}>
+        <div className={styles.grid} style={{display: 'flex'}}>
           <div className={styles.card}>
             <Link legacyBehavior href='/ourteam'>
             <a>
@@ -74,7 +74,7 @@ export default function Home() {
                 Usage Page 
               </h2>
               <p className={styles.description}>
-                Learn how to use Brief
+                Learn how to use Brief.
               </p>
             </a>
             </Link>
