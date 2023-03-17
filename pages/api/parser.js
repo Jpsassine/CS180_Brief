@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 /**
  * In this file we parse the raw email json intake.
  * This parsing consists of creating a mapping from
@@ -7,30 +9,83 @@
  * body, date.
  */
 
-const fs = require("fs");
+// We use Strategy pattern to implement parsing
+// for different input methods: SMS, DMs, Emails,
 
-fs.readFile("raw_emails.json", (error, data) => {
-  if (error) {
-    console.error("Error reading messages file: ", error);
-  } else {
-    const messagesArray = JSON.parse(data);
-    const userMessagesMap = {};
+// Define the strategy classes
+class InputSMS {
+  parse() {
+    return;
+  }
+}
 
-    messagesArray.forEach((message) => {
-      const user = message.from;
-      const messageData = {
-        date: message.date,
-        subject: message.subject,
-        body: message.body,
-      };
+class InputDMs {
+  parse() {
+    return;
+  }
+}
 
-      if (userMessagesMap[user]) {
-        userMessagesMap[user].push(messageData);
+class InputEmail {
+  parse() {
+    fs.readFile("raw_emails.json", (error, data) => {
+      if (error) {
+        console.error("Error reading messages file: ", error);
       } else {
-        userMessagesMap[user] = [messageData];
+        const messagesArray = JSON.parse(data);
+        const userMessagesMap = {};
+
+        messagesArray.forEach((message) => {
+          const user = message.from;
+          const messageData = {
+            date: message.date,
+            subject: message.subject,
+            body: message.body,
+          };
+
+          if (userMessagesMap[user]) {
+            userMessagesMap[user].push(messageData);
+          } else {
+            userMessagesMap[user] = [messageData];
+          }
+        });
+
+        console.log(userMessagesMap);
       }
     });
-
-    console.log(userMessagesMap);
+    userMessagesMap;
+    return;
   }
-});
+}
+
+// Define the context class
+class Context {
+  constructor(strategy) {
+    this.strategy = strategy;
+  }
+
+  executeStrategy() {
+    return this.strategy.parse();
+  }
+}
+
+// Export the function that uses the Strategy pattern
+export function performParse(strategyType) {
+  let strategy;
+
+  switch (strategyType) {
+    case "SMS":
+      strategy = new InputSMS();
+      break;
+    case "DM":
+      strategy = new InputDMs();
+      break;
+    case "EMAIL":
+      strategy = new InputEmail();
+      break;
+    default:
+      throw new Error("Invalid strategy type.");
+  }
+
+  const context = new Context(strategy);
+  return context.executeStrategy();
+}

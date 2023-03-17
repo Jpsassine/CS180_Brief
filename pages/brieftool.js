@@ -59,6 +59,7 @@ const Login = ({ data }) => {
 
   //const result = signIn();
 
+
   const [user, loading] = useAuthState(auth);
   const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 
