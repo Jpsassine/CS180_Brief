@@ -1,5 +1,4 @@
-const fs = require("fs");
-
+import raw_emails from "./raw_emails";
 /**
  * In this file we parse the raw email json intake.
  * This parsing consists of creating a mapping from
@@ -27,33 +26,22 @@ class InputDMs {
 
 class InputEmail {
   parse() {
-    fs.readFile("raw_emails.json", (error, data) => {
-      if (error) {
-        console.error("Error reading messages file: ", error);
+    const userMessagesMap = {};
+    raw_emails.forEach((message) => {
+      const user = message.from;
+      const messageData = {
+        subject: message.subject,
+        body: message.body,
+      };
+
+      if (userMessagesMap[user]) {
+        userMessagesMap[user].push(messageData);
       } else {
-        const messagesArray = JSON.parse(data);
-        const userMessagesMap = {};
-
-        messagesArray.forEach((message) => {
-          const user = message.from;
-          const messageData = {
-            date: message.date,
-            subject: message.subject,
-            body: message.body,
-          };
-
-          if (userMessagesMap[user]) {
-            userMessagesMap[user].push(messageData);
-          } else {
-            userMessagesMap[user] = [messageData];
-          }
-        });
-
-        console.log(userMessagesMap);
+        userMessagesMap[user] = [messageData];
       }
     });
-    userMessagesMap;
-    return;
+    console.log(userMessagesMap);
+    return userMessagesMap;
   }
 }
 

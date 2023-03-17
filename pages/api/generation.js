@@ -6,6 +6,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
+  console.log("BODY", req.body);
   if (!configuration.apiKey) {
     res.status(500).json({
       error: {
@@ -49,10 +50,11 @@ export default async function (req, res) {
     }
   }
 }
-//changes
-// TODO(JP): Parse message to standard format in function within this file
+
 function generatePrompt(inbound_msg) {
-  return `Summarize the content of this email into a couple sentances.
+  return `Summarize the content of this email into two sentences. It distinguishes the subject and body for you, but do not include these keywords. Make it as simple as possible while retaining context.
+  Break the sentences up into two bullet points. The following is how the output should be.
+
   
    Full email:${inbound_msg}
    Summary:`;
