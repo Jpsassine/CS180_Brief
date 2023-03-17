@@ -52,6 +52,12 @@ const Login = ({ data }) => { // pass the data as a prop
         {data[key].some((value) => value.includes("meeting")) && (
          <button className={styles.brieftoolButton} style={{marginTop: '20px'}}>Join</button>
         )}
+        {data[key].some((value) => value.includes("decide")) && (
+         <button className={styles.brieftoolButton} style={{marginTop: '20px'}}>Yes</button>
+        )}
+        {data[key].some((value) => value.includes("decide")) && (
+         <button className={styles.brieftoolButton} style={{margin: '20px 0 0 20px'}}>No</button>
+        )}
        </div>
       ))}
       </Carousel>
@@ -73,7 +79,7 @@ const Login = ({ data }) => { // pass the data as a prop
 
 export async function getServerSideProps() {
   const res = {
-    "John": ["Hello World!", "Goodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbye  oodbyeoodbyeoodbyeoodbye  World!"],
+    "John": ["Hello World decide!", "Goodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbyeoodbye  oodbyeoodbyeoodbyeoodbye  World!"],
     "Jane": ["Hello World 1!"],
     "Judy": ["Hello World 2!", "Goodbye World meeting 2 bla bla bla bla bla hahahah!", "Hello World 3!"]
   };
