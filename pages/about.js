@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <>
     <Link legacyBehavior href = '/'>
-      <button className={styles.button}> Back </button>
+      <button className={styles.bbutton}> Back </button>
     </Link>
     <div className={styles.center}>
           <h1 className={inter.className}>

@@ -20,7 +20,7 @@ export default function AboutUs() {
         < div className={styles.wrapper}>
         <div className={styles.teamdesc}>
         <Link legacyBehavior href = '/'>
-            <button className={styles.button}> Back </button>
+            <button className={styles.bbutton}> Back </button>
           </Link>
           </div>
             <h1>Our Team</h1>
