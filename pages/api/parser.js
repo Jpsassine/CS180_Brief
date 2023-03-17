@@ -1,6 +1,15 @@
+/**
+ * In this file we parse the raw email json intake.
+ * This parsing consists of creating a mapping from
+ * each user to their messages. These messages are
+ * stored in an array, and each cell contains
+ * multiple attributes about the message: subject,
+ * body, date.
+ */
+
 const fs = require("fs");
 
-fs.readFile("messages.json", (error, data) => {
+fs.readFile("raw_emails.json", (error, data) => {
   if (error) {
     console.error("Error reading messages file: ", error);
   } else {

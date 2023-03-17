@@ -1,3 +1,8 @@
+/**
+ * Here we connect to the GMailAPI with our client
+ *
+ */
+
 function loadGmailApi() {
   return new Promise(function (resolve, reject) {
     gapi.load("client", function () {
@@ -13,6 +18,13 @@ function loadGmailApi() {
   });
 }
 
+/**
+ * This function reads emails from the user's inbox. It selects only
+ * those received in the last 24 hours to add to an array. This array
+ * includes raw attributes of the email. This array is converted to a
+ * JSON file of raw emails for us to read later and parse.
+ * @param {*} token The user login token allowing us to read emails.
+ */
 export function readInboxEmails(token) {
   // Load the Gmail API
   loadGmailApi()
