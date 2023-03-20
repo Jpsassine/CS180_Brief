@@ -51,9 +51,7 @@ async function generation(in_message) {
       console.error(error.response.status, error.response.data);
       return;
     } else {
-      console.error(
-        `Error with OpenAI API request: ${error.message}`
-      );
+      console.error(`Error with OpenAI API request: ${error.message}`);
       return {
         error: {
           message: "An error occurred during your request.",

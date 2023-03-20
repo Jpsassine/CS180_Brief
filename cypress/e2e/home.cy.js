@@ -6,6 +6,6 @@ context("Home Page", () => {
   });
 
   it("Should find button on homepage", () => {
-    cy.get("button").contains("Login")
+    cy.get("button").contains("Login");
   });
 });

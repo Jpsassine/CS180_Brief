@@ -2,11 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter, Linden_Hill } from "@next/font/google";
 import { initFirebase } from "../firebase/firebaseApp";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
@@ -19,18 +15,11 @@ export default function Home() {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 
-  // const signIn = async () => {
-  //   const result = await signInWithPopup(auth, provider);
-  //   console.log(result.user);
-  // };
   return (
     <>
       <Head>
         <title>Brief: AI Summarizer</title>
-        <meta
-          name="description"
-          content="Summarize Your Daily Messages"
-        />
+        <meta name="description" content="Summarize Your Daily Messages" />
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
@@ -60,9 +49,7 @@ export default function Home() {
             <Link legacyBehavior href="/about">
               <a>
                 <h2 className={inter.className}>About Us</h2>
-                <p className={styles.description}>
-                  Learn about our company.
-                </p>
+                <p className={styles.description}>Learn about our company.</p>
               </a>
             </Link>
           </div>
@@ -70,9 +57,7 @@ export default function Home() {
             <Link legacyBehavior href="/usagepage">
               <a>
                 <h2 className={inter.className}>Usage Page</h2>
-                <p className={styles.description}>
-                  Learn how to use Brief.
-                </p>
+                <p className={styles.description}>Learn how to use Brief.</p>
               </a>
             </Link>
           </div>
