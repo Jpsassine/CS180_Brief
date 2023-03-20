@@ -54,7 +54,7 @@ const Login = ({ data }) => {
   const router = useRouter();
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({
-    client_id: NEXT_PUBLIC_CLIENT_ID  });
+    client_id: process.env.NEXT_PUBLIC_CLIENT_ID  });
   provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
 
   const signIn = async () => {
