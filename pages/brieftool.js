@@ -54,7 +54,8 @@ const Login = ({ data }) => {
   const router = useRouter();
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({
-    client_id: process.env.NEXT_PUBLIC_CLIENT_ID  });
+    client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
+  });
   provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
 
   const signIn = async () => {
@@ -97,11 +98,11 @@ const Login = ({ data }) => {
           </button>
         </Link>
         <div className={inter.className}>
-          <div style={local_styles.briefBorder}>
+          <div className={briefstyles.briefBorder}>
             <h1> {today} Brief </h1>
             <Carousel>
               {Object.keys(data).map((key, index) => (
-                <div style={local_styles.interactionsText} key={index}>
+                <div className={briefstyles.interactionsText} key={index}>
                   <h3 style={{ color: "#ADD8E6", fontSize: "24px" }}>
                     Message(s) From :{" "}
                     <span style={{ color: "#66CCFF" }}>{key}</span>
@@ -156,22 +157,3 @@ const Login = ({ data }) => {
 };
 
 export default Login;
-
-// 000E2B
-/* Brief tool styles */
-const local_styles = {
-  briefBorder: {
-    position: "relative",
-    textAlign: "center",
-    padding: "40px 200px 40px 200px",
-    border: "10px solid #66CCFF",
-    backgroundColor: "#1A1A1A",
-  },
-
-  interactionsText: {
-    width: "50%",
-    lineHeight: "3rem",
-    margin: "60px auto 60px auto",
-    textAlign: "left",
-  },
-};

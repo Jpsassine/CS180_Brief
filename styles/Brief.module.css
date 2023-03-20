@@ -24,3 +24,18 @@
   align-items: "center";
   height: "100vh";
 }
+
+.briefBorder {
+  position: "relative";
+  text-align: "center";
+  padding: "40px 200px 40px 200px";
+  border: "10px solid #66CCFF";
+  background-color: "#1A1A1A";
+}
+
+.interactionsText {
+  width: "50%";
+  line-height: "3rem";
+  margin: "60px auto 60px auto";
+  text-align: "left";
+}
