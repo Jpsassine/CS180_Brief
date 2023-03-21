@@ -68,8 +68,7 @@ export function readInboxEmails(token) {
                     } else if (header.name === "Date") {
                       var date = new Date(header.value);
                       var now = new Date();
-                      var hoursSince =
-                        (now - date) / (1000 * 60 * 60); // Calculate the number of hours since the message was sent
+                      var hoursSince = (now - date) / (1000 * 60 * 60); // Calculate the number of hours since the message was sent
                       if (hoursSince <= 24) {
                         // Check if the message was sent within the last 24 hours
                         var formattedDate = date.toISOString();
@@ -95,20 +94,13 @@ export function readInboxEmails(token) {
                   // Convert the object to JSON and log it to the console
                   const messagesJSON = JSON.stringify(messagesArray);
                   console.log(messagesJSON);
-                  fs.writeFile(
-                    "raw_emails.json",
-                    messagesJSON,
-                    (error) => {
-                      if (error) {
-                        console.error(
-                          "Error writing message to file: ",
-                          error
-                        );
-                      } else {
-                        console.log("Message written to file");
-                      }
+                  fs.writeFile("raw_emails.json", messagesJSON, (error) => {
+                    if (error) {
+                      console.error("Error writing message to file: ", error);
+                    } else {
+                      console.log("Message written to file");
                     }
-                  );
+                  });
                 });
             }
           } else {

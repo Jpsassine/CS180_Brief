@@ -1,0 +1,41 @@
+.top {
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  height: "100vh";
+}
+
+.topb {
+  font-size: "4vw";
+  font-weight: "bold";
+  padding: "1em 2em";
+  color: "white";
+  background-color: "black";
+  background-image: "linear-gradient(45deg, #000000 0%, #555555 100%)";
+  border-radius: "0.5em";
+  border: "none";
+  box-shadow: "0px 3px 10px rgba(0, 0, 0, 0.2)";
+  font-family: "'Josefin Sans'";
+}
+
+.topl {
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  height: "100vh";
+}
+
+.briefBorder {
+  position: "relative";
+  text-align: "center";
+  padding: "40px 200px 40px 200px";
+  border: "10px solid #66CCFF";
+  background-color: "#1A1A1A";
+}
+
+.interactionsText {
+  width: "50%";
+  line-height: "3rem";
+  margin: "60px auto 60px auto";
+  text-align: "left";
+}

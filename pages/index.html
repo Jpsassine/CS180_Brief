@@ -8,12 +8,8 @@
     <p>Gmail API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" onclick="handleAuthClick()">
-      Authorize
-    </button>
-    <button id="signout_button" onclick="handleSignoutClick()">
-      Sign Out
-    </button>
+    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap"></pre>
 
@@ -39,10 +35,8 @@
       let gapiInited = false;
       let gisInited = false;
 
-      document.getElementById("authorize_button").style.visibility =
-        "hidden";
-      document.getElementById("signout_button").style.visibility =
-        "hidden";
+      document.getElementById("authorize_button").style.visibility = "hidden";
+      document.getElementById("signout_button").style.visibility = "hidden";
 
       /**
        * Callback after api.js is loaded.
@@ -82,9 +76,8 @@
        */
       function maybeEnableButtons() {
         if (gapiInited && gisInited) {
-          document.getElementById(
-            "authorize_button"
-          ).style.visibility = "visible";
+          document.getElementById("authorize_button").style.visibility =
+            "visible";
         }
       }
 
@@ -98,8 +91,7 @@
           }
           document.getElementById("signout_button").style.visibility =
             "visible";
-          document.getElementById("authorize_button").innerText =
-            "Refresh";
+          document.getElementById("authorize_button").innerText = "Refresh";
           await listLabels();
         };
 
@@ -122,10 +114,8 @@
           google.accounts.oauth2.revoke(token.access_token);
           gapi.client.setToken("");
           document.getElementById("content").innerText = "";
-          document.getElementById("authorize_button").innerText =
-            "Authorize";
-          document.getElementById("signout_button").style.visibility =
-            "hidden";
+          document.getElementById("authorize_button").innerText = "Authorize";
+          document.getElementById("signout_button").style.visibility = "hidden";
         }
       }
 
@@ -145,8 +135,7 @@
         }
         const labels = response.result.labels;
         if (!labels || labels.length == 0) {
-          document.getElementById("content").innerText =
-            "No labels found.";
+          document.getElementById("content").innerText = "No labels found.";
           return;
         }
         // Flatten to string to display

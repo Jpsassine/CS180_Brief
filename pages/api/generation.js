@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
@@ -39,9 +40,7 @@ export default async function (req, res) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);
     } else {
-      console.error(
-        `Error with OpenAI API request: ${error.message}`
-      );
+      console.error(`Error with OpenAI API request: ${error.message}`);
       res.status(500).json({
         error: {
           message: "An error occurred during your request.",
